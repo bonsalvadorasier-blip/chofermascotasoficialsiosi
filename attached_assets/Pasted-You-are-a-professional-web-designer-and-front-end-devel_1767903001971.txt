@@ -1,0 +1,112 @@
+You are a professional web designer and front-end developer specialized in small local service businesses. 
+Your task is to DESIGN AND WRITE a complete, modern, creative and highly visual website for a real business called **ChoferMASCOTAS**.
+
+IMPORTANT STYLE RULES:
+- The website must look 100% HUMAN-MADE, not AI-generated.
+- Avoid generic marketing phrases and robotic text.
+- Use natural Spanish language, warm, close, and trustworthy.
+- The tone must transmit love for animals, professionalism, experience and trust.
+- The design should be modern, clean, visual and emotional, but simple and elegant.
+- Prioritize readability, visual hierarchy and user trust.
+- The website should feel like a real local business website in Spain.
+- Use real-world structure, spacing, sections and realistic content.
+- Do NOT mention AI, automation, or generation at any point.
+
+TECHNICAL / STRUCTURE:
+- Create a full one-page website structure (can be easily split into multiple pages).
+- Use semantic HTML structure with clear sections.
+- Leave clear placeholders for images and logos.
+- The site must be responsive (mobile-first).
+- Use soft colors related to pets, trust and transport.
+- Include icons where relevant (services, contact, reviews).
+- Include a contact form that sends messages to:
+  Phone / WhatsApp: 609 43 98 89
+  Email: info@chofermascotas.com
+
+BUSINESS DESCRIPTION (USE ALL THIS INFORMATION):
+
+BUSINESS NAME:
+ChoferMASCOTAS
+
+WHAT THEY DO:
+ChoferMASCOTAS is a private and fully personalized transport service for pets and their owners.
+They offer safe, comfortable and professional transportation using a vehicle fully adapted for animals.
+
+ABOUT US / WHO WE ARE:
+ChoferMASCOTAS is a specialized pet transport service created for people who want peace of mind when traveling with their pets.
+They transport pets with or without their owners.
+They handle airport transfers, veterinary visits, grooming appointments, urban and intercity trips, long-distance journeys and special routes.
+They are serious, reliable and deeply respectful of animals.
+If the pet travels alone, the owner is informed during the whole journey.
+For long trips, necessary stops are made so the pet can walk, drink water and relax.
+
+SERVICES (NORMAL):
+- Airport, train station and port transfers
+- Urban and interurban routes
+- Veterinary clinics, grooming salons and pet spas
+- Hotels, vacation destinations and second homes
+- Exhibitions and contests
+- Long-distance travel
+
+SPECIAL SERVICES / EXPERIENCES:
+They also offer special leisure trips with pets, such as:
+- Dog-friendly beaches
+- Aquapark Canino (Roca del Vallès)
+- Natural parks
+- Mountain excursions: rivers, lakes, waterfalls
+They can suggest destinations thanks to their own experience with their dogs.
+
+SCHEDULE:
+- Daytime: Every day from 8:00 to 20:00
+- Night service available with 48h advance booking: 20:00 to 8:00
+- Weekends and public holidays available
+
+PRICES (AIRPORT – ONE WAY):
+Barcelona:
+- Day: 25 €
+- Night: 55 €
+
+Adjacent Barcelona area:
+- Day: 30 €
+- Night: 65 €
+
+Pricing conditions:
+- Prices include a 15 km radius from the starting point
+- Tolls not included
+- Additional daytime km: 1.20 € / km
+- Additional nighttime km: 1.45 € / km
+- Saturdays after 15:00, nights, Sundays and holidays: +10 € per trip
+- Other areas, long distances or custom routes must request a quote
+
+CALL TO ACTION:
+Encourage users to request a quote with no obligation.
+Highlight phone and email clearly.
+
+CONTACT INFORMATION:
+Phone: 609 43 98 89
+Email: info@chofermascotas.com
+
+REVIEWS / TESTIMONIALS:
+Include a reviews section with real, emotional testimonials from satisfied clients.
+Present them as quotes with names and dates.
+They should transmit trust, professionalism and love for animals.
+
+IMAGE SECTIONS:
+- A gallery section reserved for photos of the adapted van.
+- A section for logos or images of “friendly websites” and pet adoption collaborations.
+- Leave placeholders like: “Image of adapted van”, “Pet transport interior”, etc.
+
+EXTRA SECTIONS:
+- Guestbook / Reviews section
+- Adoption / Friendly websites section
+- Clear footer with contact info and service area
+
+FINAL INSTRUCTION (VERY IMPORTANT):
+👉 Write ALL THE WEBSITE CONTENT IN **SPANISH (CASTILIAN)**.
+👉 Use natural Spanish from Spain.
+👉 Do NOT shorten content.
+👉 Be detailed and realistic.
+👉 The final result must be ready to use on a real website.
+
+OUTPUT:
+Return the full website content and structure ready to be implemented.
