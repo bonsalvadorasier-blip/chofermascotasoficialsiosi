@@ -20,7 +20,9 @@ import {
   Users,
   TreePine,
   Facebook,
-  Twitter
+  Twitter,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +32,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@assets/generated_images/happy_dog_in_transport_van.png";
 import vanInterior from "@assets/generated_images/pet_van_interior_setup.png";
 import beachImage from "@assets/generated_images/dog-friendly_spanish_beach.png";
+
+import carouselImg1 from "@assets/image_1768045533937.png";
+import carouselImg2 from "@assets/image_1768045557858.png";
+import carouselImg3 from "@assets/image_1768045565722.png";
+import carouselImg4 from "@assets/image_1768045574454.png";
+import carouselImg5 from "@assets/image_1768045585946.png";
+import carouselImg6 from "@assets/image_1768045600788.png";
+import carouselImg7 from "@assets/image_1768045607051.png";
+import carouselImg8 from "@assets/image_1768045612607.png";
+
+const aboutCarouselImages = [
+  { src: carouselImg1, alt: "Furgoneta ChoferMASCOTAS exterior" },
+  { src: carouselImg2, alt: "Asientos traseros de la furgoneta" },
+  { src: carouselImg3, alt: "Perro cómodo en la zona de carga" },
+  { src: carouselImg4, alt: "Interior del vehículo - zona del conductor" },
+  { src: carouselImg5, alt: "Separador de seguridad para mascotas" },
+  { src: carouselImg6, alt: "Perrito listo para viajar" },
+  { src: carouselImg7, alt: "Cachorro en el vehículo" },
+  { src: carouselImg8, alt: "Perro esperando el viaje" },
+];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -392,6 +414,16 @@ function Experiences() {
 }
 
 function AboutUs() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % aboutCarouselImages.length);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + aboutCarouselImages.length) % aboutCarouselImages.length);
+  };
+
   return (
     <section id="nosotros" className="py-24 bg-primary/5">
       <div className="max-w-7xl mx-auto section-padding">
@@ -402,12 +434,54 @@ function AboutUs() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={vanInterior} 
-                alt="Interior de la furgoneta adaptada para mascotas" 
-                className="w-full h-auto"
-              />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                {aboutCarouselImages.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                    data-testid={`carousel-image-${index}`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={prevSlide}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                data-testid="button-carousel-prev"
+                aria-label="Imagen anterior"
+              >
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                data-testid="button-carousel-next"
+                aria-label="Imagen siguiente"
+              >
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+              
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {aboutCarouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? "bg-white w-6" 
+                        : "bg-white/50 hover:bg-white/75"
+                    }`}
+                    data-testid={`button-carousel-dot-${index}`}
+                    aria-label={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
           
