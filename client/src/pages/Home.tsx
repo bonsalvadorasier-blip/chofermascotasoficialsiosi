@@ -42,6 +42,22 @@ import carouselImg6 from "@assets/image_1768045600788.png";
 import carouselImg7 from "@assets/image_1768045607051.png";
 import carouselImg8 from "@assets/image_1768045612607.png";
 
+import expImg1 from "@assets/IMG_2818_1768091031685.png";
+import expImg2 from "@assets/IMG_2817_1768091031685.png";
+import expImg3 from "@assets/IMG_2816_1768091031685.png";
+import expImg4 from "@assets/IMG_2815_1768091031685.png";
+import expImg5 from "@assets/IMG_2814_1768091031686.png";
+import expImg6 from "@assets/IMG_2813_1768091031686.png";
+
+const experiencesCarouselImages = [
+  { src: expImg4, alt: "Perro corriendo en la playa" },
+  { src: expImg5, alt: "Perro disfrutando del agua" },
+  { src: expImg6, alt: "Perro jugando en la nieve" },
+  { src: expImg1, alt: "Beagle feliz junto a la furgoneta" },
+  { src: expImg2, alt: "Golden retriever en la furgoneta" },
+  { src: expImg3, alt: "Dos perros viajando juntos" },
+];
+
 const aboutCarouselImages = [
   { src: carouselImg1, alt: "Furgoneta ChoferMASCOTAS exterior" },
   { src: carouselImg2, alt: "Asientos traseros de la furgoneta" },
@@ -330,6 +346,16 @@ function Services() {
 }
 
 function Experiences() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % experiencesCarouselImages.length);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + experiencesCarouselImages.length) % experiencesCarouselImages.length);
+  };
+
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto section-padding">
@@ -388,12 +414,54 @@ function Experiences() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={beachImage} 
-                alt="Playa dog-friendly en España" 
-                className="w-full h-auto"
-              />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                {experiencesCarouselImages.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                      index === currentSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                    data-testid={`experiences-carousel-image-${index}`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={prevSlide}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                data-testid="button-experiences-carousel-prev"
+                aria-label="Imagen anterior"
+              >
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                data-testid="button-experiences-carousel-next"
+                aria-label="Imagen siguiente"
+              >
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+              
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {experiencesCarouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? "bg-white w-6" 
+                        : "bg-white/50 hover:bg-white/75"
+                    }`}
+                    data-testid={`button-experiences-carousel-dot-${index}`}
+                    aria-label={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl p-6 shadow-xl border border-border">
               <div className="flex items-center gap-3">
